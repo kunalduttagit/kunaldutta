@@ -1,0 +1,40 @@
+.svg-corner, .corner-logo-box-one {
+  font-family: Matter,sans-serif;
+  letter-spacing: -.05em;
+  width: 30;
+  height: 30;
+  fill: none;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: -30px;
+  left: 1.5rem;
+}
+
+.corner-logo-box-two {
+  font-family: Matter,sans-serif;
+  letter-spacing: -.05em;
+  width: 30;
+  height: 30;
+  fill: none;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 68px;
+  left: calc(120px + 1.5rem);
+}
+
+.corner-content-box-one {
+  position: absolute;
+  right: -30px;
+  bottom: 0;
+  transform: rotate(-90deg);
+}
+.corner-content-box-two {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  rotate: -90deg;
+}
+
+svg {
+  fill: currentColor;
+}

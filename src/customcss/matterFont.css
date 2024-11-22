@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Matter';
+    src: url('../app/fonts/matter-font/Matter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('../app/fonts/matter-font/Matter-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('../app/fonts/matter-font/Matter-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('../app/fonts/matter-font/Matter-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('../app/fonts/matter-font/Matter-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('../app/fonts/matter-font/Matter-Heavy.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}

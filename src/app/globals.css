@@ -2,26 +2,162 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@import url(../customcss/theme.css);
+@import url(../customcss/svgArc.css);
+@import url(../customcss/languageBox.css);
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+@import url(../customcss/matterFont.css);
+@import url(../customcss/poppinsFont.css);
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+:root.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+} */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	color: var(--foreground);
+	background: var(--background);
+	font-family: Matter, Poppins, Helvetica, sans-serif;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+@font-face {
+	font-family: "Mocktaile";
+	src: url("../app/fonts/Mocktaile/MocktaileTypeface Regular.otf");
+}
+
+.name-card {
+	font-family: Mocktaile;
+}
+
+.arrow-cursor {
+	cursor: url("data:image/svg+xml,%3Csvg fill='none' height='72' viewBox='0 0 72 72' width='72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1'%3E%3Ccircle cx='36' cy='36' r='27'/%3E%3Cpath d='m42 42v-12m0 0h-12m12 0-12 12'/%3E%3C/g%3E%3C/svg%3E"),
+		pointer;
+}
+
+.dark .arrow-cursor {
+	cursor: url('data:image/svg+xml,<svg fill="none" height="72" viewBox="0 0 72 72" width="72" xmlns="http://www.w3.org/2000/svg"><g stroke="%23fff" stroke-linecap="round" stroke-linejoin="round"><circle cx="36" cy="36" r="27"/><path d="m42 42v-12m0 0h-12m12 0-12 12"/></g></svg>'),
+		pointer;
+	/* cursor: url("data:image/svg+xml,%3Csvg fill='none' height='72' viewBox='0 0 72 72' width='72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='#fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1'%3E%3Ccircle cx='36' cy='36' r='27'/%3E%3Cpath d='m42 42v-12m0 0h-12m12 0-12 12'/%3E%3C/g%3E%3C/svg%3E"), pointer; */
+}
+
+.spectrum-line {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: linear-gradient(
+		to right,
+		red,
+		orange,
+		yellow,
+		cyan,
+		blue,
+		rgb(68, 255, 68)
+	);
+	/* animation: glow 1.5s ease-in-out infinite alternate; */
+	opacity: 0;
+}
+
+.card:hover {
+	-webkit-box-shadow: 0px 0px 104px 0px rgba(45, 255, 196, 0.4);
+	-moz-box-shadow: 0px 0px 104px 0px rgba(45, 255, 196, 0.4);
+	box-shadow: 0px 0px 104px 0px rgba(45, 255, 196, 0.4);
+}
+
+.gradient-line {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	right: 0;
+	height: 4px;
+	z-index: 100;
+	background: linear-gradient(to right, #ff4d4d, #ffb84d, #4dff4d, #4d4dff);
+}
+
+.glow-effect {
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+	right: 0;
+	height: 50px;
+	background: linear-gradient(
+		to right,
+		rgba(255, 77, 77, 0.4),
+		rgba(255, 184, 77, 0.4),
+		rgba(77, 255, 77, 0.4),
+		rgba(77, 77, 255, 0.4)
+	);
+	filter: blur(20px);
+	opacity: 0.9;
+	z-index: 50;
+}
+
+.glow-effect {
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+	right: 0;
+	height: 80px;
+	background: linear-gradient(
+		to right,
+		rgba(255, 77, 77, 0.4),
+		rgba(255, 184, 77, 0.4),
+		rgba(77, 255, 77, 0.4),
+		rgba(77, 77, 255, 0.4)
+	);
+	filter: blur(60px);
+	opacity: 0.4;
+	z-index: 50;
+}
+
+.glow-container {
+	background: linear-gradient(to right, #ff4d4d, #ffb84d, #4dff4d, #4d4dff);
+	filter: blur(30px);
+}
+
+/* .spectrum-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #fff;
+  box-shadow:
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 -5px 20px rgba(255, 70, 230, 0.7),
+    0 -10px 30px rgba(120, 0, 255, 0.5);
+  animation: glow 1.5s ease-in-out infinite alternate;
+} */
+
+@keyframes glow {
+	from {
+		opacity: 0.8;
+		box-shadow: 0 0 10px red, 0 0 20px orange, 0 -5px 20px blue,
+			0 -10px 30px green;
+	}
+	to {
+		opacity: 1;
+		box-shadow: 0 0 15px orange, 0 0 25px red, 0 -8px 25px indigo,
+			0 -15px 40px blue;
+	}
 }
