@@ -1,5 +1,14 @@
 import Link from "next/link";
 
+interface SocialCardProps {
+    name: string;
+    username: string;
+    img: string;
+    nColor: string;
+    unColor: string;
+    href: string;
+}
+
 export default function SocialCard({
 	name,
 	username,
@@ -7,7 +16,7 @@ export default function SocialCard({
 	nColor = "black",
 	unColor = "black",
 	href = "https://www.linkedin.com/in/duttakunal13",
-}: any) {
+}: SocialCardProps ) {
 	return (
 		<Link href={href} target="_blank">
 			<div className="card relative w-64 h-64 rounded-[13px] overflow-hidden group font-[Poppins]">

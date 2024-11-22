@@ -6,11 +6,12 @@ export default function AboutMe() {
 			<img
 				src={"/assets/images/me.png"}
 				className="h-auto max-h-[85vh] w-auto object-contain absolute -right-10 -bottom-10 "
+				alt="Potrait of Kunal Dutta"
 			/>
 			<div className="absolute left-10 top-[10%] dark:text-black text-white">
 				<h1 className="text-[15rem] font-[200] leading-snug">Hello</h1>
 				<h2 className="text-5xl leading-[1.15]">
-					I'm a <strong>developer</strong> with a knack <br /> for 
+					I&apos;m a <strong>developer</strong> with a knack <br /> for 
 					<span className="font-[500] ml-1">
 						<FlipWords
 							words={[

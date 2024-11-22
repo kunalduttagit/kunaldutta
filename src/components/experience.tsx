@@ -37,7 +37,7 @@ export default function Experience() {
 					</div>
 
 					<article className="w-[40%] text-justify leading-relaxed text-[rgb(112,112,112)] dark:text-[rgb(150,150,150)]">
-						I'm primarily worked as a{" "}
+						I&apos;m primarily worked as a{" "}
 						<strong>Flutter developer</strong>, collaborating
 						closely with my mentor (co-founder) to bring ideas to
 						life. He would share his vision, and I would dive into
@@ -56,10 +56,10 @@ export default function Experience() {
 						and designers. I also worked on <strong>NextJS</strong>,
 						working on{" "}
 						<strong>API integrations and state management</strong>{" "}
-						to boost our web application's performance. Throughout
+						to boost our web application&apos;s performance. Throughout
 						the journey, I maintained a delicate balance between
 						modernizing our design language and staying true to our{" "}
-						<strong>brand's identity</strong>.
+						<strong>brand&apos;s identity</strong>.
 					</article>
 				</div>
 			</div>
@@ -100,7 +100,7 @@ export default function Experience() {
 					<strong>communicate</strong> with players in real-time.
 					Players had a calendar to <strong>track</strong> their
 					assigned sessions and interact with their coaches, while
-					family members could monitor their child's progress.
+					family members could monitor their child&apos;s progress.
 					<br /> <br></br>I handled the <strong>UI/UX</strong> design,{" "}
 					<strong>backend</strong> architecture, <strong>APIs</strong>
 					, <strong>database</strong> schemas, and{" "}
