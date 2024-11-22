@@ -1,5 +1,4 @@
 import SocialCard from "./socialCard";
-import { PinContainer } from "./ui/3dPin";
 
 export default function Socials() {
 	return (
