@@ -1,6 +1,3 @@
-"use client";
-import { motion, useAnimationControls } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
 
 interface ScrollColumnProps {
   images: string[];
@@ -8,54 +5,22 @@ interface ScrollColumnProps {
 }
 
 const ScrollColumn: React.FC<ScrollColumnProps> = ({ images, duration }) => {
-  const controls = useAnimationControls();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [containerHeight, setContainerHeight] = useState(0);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      setContainerHeight(containerRef.current.scrollHeight / 2);
-    }
-  }, [images]);
-
-  useEffect(() => {
-    controls.start({
-      y: [-containerHeight, 0],
-      transition: {
-        repeat: Infinity,
-        repeatType: "loop",
-        duration,
-        ease: "linear",
-      },
-    });
-  }, [containerHeight, duration, controls]);
-
   return (
-    <div className="" style={{ height: containerHeight }}>
-      <motion.div
-        ref={containerRef}
-        animate={controls}
-        className="flex flex-col"
-        // onHoverStart={() => controls.stop()}
-        // onHoverEnd={() => controls.start({
-        //   y: [-containerHeight, 0],
-        //   transition: {
-        //     repeat: Infinity,
-        //     repeatType: "loop",
-        //     duration,
-        //     ease: "linear",
-        //   },
-        // })}
+    <div className="scroll-column">
+      <div 
+        className="scroll-content"
+        style={{ animationDuration: `${duration}s` }}
       >
         {[...images, ...images].map((src, index) => (
           <img
             key={index}
             src={src}
-            className="w-44 object-contain rounded-[13px] shadow-lg my-4 mx-1"
+            className="scroll-image"
             alt={`scroll-image-${index}`}
+            loading="lazy"
           />
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -79,7 +44,7 @@ const ImageScroll: React.FC = () => {
   ];
 
   return (
-    <div className="mt-8 flex gap-14">
+    <div className="image-scroll">
       <ScrollColumn images={column1} duration={20} />
       <ScrollColumn images={column2} duration={15} />
       <ScrollColumn images={column3} duration={25} />

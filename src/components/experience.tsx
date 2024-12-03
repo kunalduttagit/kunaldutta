@@ -4,20 +4,20 @@ import ImageScroll2 from "./ui/imageScroll2";
 
 export default function Experience() {
 	return (
-		<div className="w-full flex justify-center items-center flex-col px-10">
+		<div className="w-full flex justify-center items-center flex-col lg:px-10 px-2">
 			<h1 className="text-3xl font-semibold">Experiences</h1>
 			<div className="w-full">
-				<div className="flex justify-between w-full mt-10">
+				<div className="flex max-lg:flex-col justify-between w-full mt-10">
 					<div>
-						<h2 className="text-3xl font-[500]">
+						<h2 className="lg:text-3xl text-xl font-[500]">
 							Canyfix, Kalyan West, Maharashtra
 						</h2>
 						<h3 className="text-2xl mt-4 text-[rgb(112,112,112)] dark:text-[rgb(150,150,150)]">
-							<span className="mx-3">&#8226;</span>Lead
+							<span className="lg:mx-3 mr-3">&#8226;</span>Lead
 							Application Developer
 						</h3>
 					</div>
-					<div className="flex flex-col justify-around items-end">
+					<div className="flex flex-col justify-around lg:items-end max-lg:space-y-4 max-lg:mt-4">
 						<div className="text-lg text-[rgb(112,112,112)] dark:text-[rgb(150,150,150)]">
 							July 2024 - Present
 						</div>
@@ -31,12 +31,12 @@ export default function Experience() {
 					</div>
 				</div>
 
-				<div className="flex w-full justify-around gap-8 mt-10">
-					<div className=" h-[45vh] w-[55%] overflow-hidden  dark:[mask:linear-gradient(to_bottom,white_50%,white,transparent)]">
+				<div className="flex w-full max-lg:flex-col justify-around gap-8 lg:mt-10">
+					<div className=" h-[45vh] lg:h-[5ovh] w-full lg:w-[55%] overflow-hidden  dark:[mask:linear-gradient(to_bottom,white_50%,white,transparent)]">
 						<ImageScroll />
 					</div>
 
-					<article className="w-[40%] text-justify leading-relaxed text-[rgb(112,112,112)] dark:text-[rgb(150,150,150)]">
+					<article className="2xl:text-2xl  w-full lg:w-[40%] text-justify leading-relaxed text-[rgb(112,112,112)] dark:text-[rgb(150,150,150)]">
 						I&apos;m primarily worked as a{" "}
 						<strong>Flutter developer</strong>, collaborating
 						closely with my mentor (co-founder) to bring ideas to
@@ -65,30 +65,30 @@ export default function Experience() {
 			</div>
 
 			<div className="bg-[#7b7b7b] h-[1px] w-full my-10" />
-			<div className="flex justify-between w-full">
+			<div className="flex max-lg:flex-col justify-between w-full">
 				<div>
 					<h2 className="text-3xl font-[500]">
 						University of Valencia, Spain
 					</h2>
 					<h3 className="text-2xl mt-4 text-[rgb(112,112,112)] dark:text-[rgb(150,150,150)]">
-						<span className="mx-3">&#8226;</span>Team Leader
+						<span className="lg:mx-3 mr-3">&#8226;</span>Team Leader
 					</h3>
 				</div>
-				<div className="flex flex-col justify-around items-end">
+				<div className="flex flex-col justify-around lg:items-end max-lg:space-y-4 max-lg:mt-4">
 					<div className="text-lg text-[rgb(112,112,112)] dark:text-[rgb(150,150,150)]">
 						Apr 2024 - Sep 2024
 					</div>
 					<div className="flex flex-wrap gap-2">
 						<SkillPill skill="ReactJS" />
 						<SkillPill skill="Node Mailer" />
-						<SkillPill skill="Role Based Access" />
 						<SkillPill skill="ExpressJS" />
+						<SkillPill skill="Role Based Access" />
 					</div>
 				</div>
 			</div>
 
-			<div className="flex w-full justify-around gap-8 mt-10">
-				<article className="w-[40%] text-justify leading-relaxed text-[rgb(112,112,112)] dark:text-[rgb(150,150,150)]">
+			<div className="flex max-lg:flex-col-reverse w-full justify-around gap-8 mt-10">
+				<article className="2xl:text-2xl w-full lg:w-[40%] text-justify leading-relaxed text-[rgb(112,112,112)] dark:text-[rgb(150,150,150)]">
 					I build a football exercise selection platform for athletes,
 					their families, coaches, and admins, each with specific{" "}
 					<strong>roles and access levels</strong>. Admins could{" "}
@@ -115,7 +115,7 @@ export default function Experience() {
 					user-centered design.
 				</article>
 
-				<div className=" h-[45vh] w-[55%] overflow-hidden dark:[mask:linear-gradient(to_bottom,white_50%,white,transparent)]">
+				<div className="h-[45vh] lg:h-[50vh] w-full lg:w-[55%] overflow-hidden dark:[mask:linear-gradient(to_bottom,white_50%,white,transparent)]">
 					<ImageScroll2 />
 				</div>
 			</div>

@@ -64,7 +64,7 @@ export default function Techstack() {
 	];
 
 	return (
-		<div className="items-center w-[25vw] h-full justify-start flex flex-col space-y-8 pt-6">
+		<div className="lg:items-start items-center w-full lg:w-[25vw] xl:w-auto lg:h-full justify-center lg:justify-start flex flex-col space-y-8 pt-6  max-lg:mt-4">
 			<Carousel
 				plugins={[
 					Autoplay({
@@ -76,15 +76,12 @@ export default function Techstack() {
 				<CarouselContent>
 					{technologies.map((logo, index) => (
 						<CarouselItem key={index}>
-							<div className="justify-center flex flex-col items-center mt-2 ">
+							<div className="justify-center flex flex-col items-center t-2">
 								<img
-									src={
-										"/assets/images/techLogos/" +
-										logo +
-										".svg"
-									}
+									src={"/assets/images/techLogos/" + logo + ".svg" }
 									alt={techNames[index]}
 									className="h-32 w-32 object-contain invert dark:invert-0"
+									loading="lazy"
 								/>
 								<p className="mt-1 text-gray-200 dark:text-gray-700 text-lg font-semibold">
 									{techNames[index]}
@@ -96,20 +93,7 @@ export default function Techstack() {
 				<CarouselPrevious />
 				<CarouselNext />
 			</Carousel>
-			{/* <div className="langauge-container h-full w-[90%] rounded-[26px] p-3 overflow-scroll space-y-2">
-				{languages.map((logo, i) => (
-					<div className="flex justify-center items-center space-x-4" key={i}>
-						<div className="flex w-1/6 aspect-square justify-center items-center rounded-full backdrop-blur-2xl bg-[#ffffff75] ring-[0.5px] shadow-lg ring-white">
-							<img src={`/assets/images/languageLogos/${logo}.svg`} className="h-8 w-8 aspect-square object-cover"/>
-						</div>
-						<div className=" w-full">
-							<p className="text-xl font-bold"> {langNames[i]} </p>
-							<p className="text-sm font-[500] text-gray-100"> {langDesc[i]} </p>
-						</div>
-					</div>
-				))}
-			</div> */}
-			<div className="langauge-container h-[65%] w-[80%] rounded-[26px] p-2 min-h-[380px]">
+			<div className="langauge-container h-full w-[80%] lg:w-64 rounded-[26px] p-2 lg:min-h-[380px] min-h-[50vh]">
 				<Carousel
 					plugins={[
 						Autoplay({
@@ -121,8 +105,7 @@ export default function Techstack() {
 					<CarouselContent>
 						{languages.map((logo, index) => (
 							<CarouselItem key={index}>
-								<div className="justify-between h-full flex flex-col items-center p-1">
-									<div>
+								<div className=" h-full flex flex-col items-center p-1">
 										
 									<div className="bg-black rounded-[20px] h-44 w-full flex justify-center items-center overflow-hidden">
 										<img
@@ -131,19 +114,12 @@ export default function Techstack() {
 											className="h-[140%] object-contain"
 										/>
 									</div>
-									{/* <p className="text-gray-200 dark:text-gray-700 text-lg font-semibold">
-										{langNames[index]}
-									</p> */}
 									<p className="mt-6 text-white font-[500] text-2xl tracking-[-0.04em] leading-7">{langDesc[index]}</p>
 
-									</div>
-									{/* <p>.cpp</p> */}
 								</div>
 							</CarouselItem>
 						))}
 					</CarouselContent>
-					{/* <CarouselPrevious />
-				<CarouselNext /> */}
 				</Carousel>
 			</div>
 		</div>

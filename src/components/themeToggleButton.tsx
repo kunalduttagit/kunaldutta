@@ -1,31 +1,17 @@
 'use client';
 
+import "@theme-toggles/react/css/Expand.css"
+import { Expand } from "@theme-toggles/react"
+
 export default function ThemeToggle() {
   const toggleTheme = () => {
     document.body.classList.toggle('dark');
     //document.documentElement.classList.toggle('dark');
-    //document.body.classList.toggle("bg-dark");
-    document.documentElement.classList.toggle("theme--night");
   };
 
   return (
-    // <button 
-    //   onClick={toggleTheme}
-    //   className="bg-gray-200 dark:bg-gray-800 px-4 py-2 rounded-lg"
-    // >
-    //   Toggle Theme
-    // </button>
-    <div className="relative bg-white dark:bg-black p-7 ml-4 rounded-full">
-      <div className="theme-toggle theme-toggle-js" onClick={toggleTheme}>
-        <span className="moon"></span>
-        <span className="sun"></span>
-        <small className="sun__ray"></small>
-        <small className="sun__ray"></small>
-        <small className="sun__ray"></small>
-        <small className="sun__ray"></small>
-        <small className="sun__ray"></small>
-        <small className="sun__ray"></small>
-    </div>
+    <div onClick={toggleTheme} className="ring-black w-12 h-12 rounded-full ring-1 flex justify-center items-center big-dot-cursor">
+      <Expand duration={750} className="scale-150 text-black" placeholder={"Theme Toggle"} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
     </div>
   );
 }

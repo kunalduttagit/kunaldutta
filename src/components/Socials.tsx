@@ -4,7 +4,7 @@ export default function Socials() {
 	return (
 		<div className="w-full flex flex-col justify-center items-center ">
 			<h1 className="text-3xl font-semibold my-10">My Socials</h1>
-			<div className="flex flex-wrap gap-12 w-full justify-center">
+			<div className="flex flex-wrap gap-4 md:gap-12 w-full justify-evenly">
 				<SocialCard
 					name="Linkedin"
 					username="duttakunal13"

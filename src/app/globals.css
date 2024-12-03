@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(../customcss/theme.css);
+/* @import url(../customcss/theme.css); */
 @import url(../customcss/svgArc.css);
 @import url(../customcss/languageBox.css);
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
 @import url(../customcss/matterFont.css);
 @import url(../customcss/poppinsFont.css);
+@import url("https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/{toggle name}.min.css");
 
 /* :root {
   --background: #ffffff;
@@ -48,15 +49,32 @@ html {
 }
 
 .arrow-cursor {
-	cursor: url("data:image/svg+xml,%3Csvg fill='none' height='72' viewBox='0 0 72 72' width='72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1'%3E%3Ccircle cx='36' cy='36' r='27'/%3E%3Cpath d='m42 42v-12m0 0h-12m12 0-12 12'/%3E%3C/g%3E%3C/svg%3E"),
-		pointer;
-}
-
-.dark .arrow-cursor {
-	cursor: url('data:image/svg+xml,<svg fill="none" height="72" viewBox="0 0 72 72" width="72" xmlns="http://www.w3.org/2000/svg"><g stroke="%23fff" stroke-linecap="round" stroke-linejoin="round"><circle cx="36" cy="36" r="27"/><path d="m42 42v-12m0 0h-12m12 0-12 12"/></g></svg>'),
-		pointer;
-	/* cursor: url("data:image/svg+xml,%3Csvg fill='none' height='72' viewBox='0 0 72 72' width='72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='#fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1'%3E%3Ccircle cx='36' cy='36' r='27'/%3E%3Cpath d='m42 42v-12m0 0h-12m12 0-12 12'/%3E%3C/g%3E%3C/svg%3E"), pointer; */
-}
+	cursor: default;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	will-change: cursor;
+	transition: transform 0.15s cubic-bezier(.33,.96,1,.67);
+  }
+  
+  .arrow-cursor:hover {
+	cursor: url("data:image/svg+xml,%3Csvg fill='none' height='72' viewBox='0 0 72 72' width='72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1'%3E%3Ccircle cx='36' cy='36' r='27'/%3E%3Cpath d='m42 42v-12m0 0h-12m12 0-12 12'/%3E%3C/g%3E%3C/svg%3E") 16 16,
+	  pointer;
+  }
+  
+  .arrow-cursor:hover * {
+	cursor: url("data:image/svg+xml,%3Csvg fill='none' height='72' viewBox='0 0 72 72' width='72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1'%3E%3Ccircle cx='36' cy='36' r='27'/%3E%3Cpath d='m42 42v-12m0 0h-12m12 0-12 12'/%3E%3C/g%3E%3C/svg%3E") 16 16,
+	  pointer;
+  }
+  
+  .dark .arrow-cursor:hover {
+	cursor: url('data:image/svg+xml,<svg fill="none" height="72" viewBox="0 0 72 72" width="72" xmlns="http://www.w3.org/2000/svg"><g stroke="%23fff" stroke-linecap="round" stroke-linejoin="round"><circle cx="36" cy="36" r="27"/><path d="m42 42v-12m0 0h-12m12 0-12 12"/></g></svg>') 16 16,
+	  pointer;
+  }
+  
+  .dark .arrow-cursor:hover * {
+	cursor: url('data:image/svg+xml,<svg fill="none" height="72" viewBox="0 0 72 72" width="72" xmlns="http://www.w3.org/2000/svg"><g stroke="%23fff" stroke-linecap="round" stroke-linejoin="round"><circle cx="36" cy="36" r="27"/><path d="m42 42v-12m0 0h-12m12 0-12 12"/></g></svg>') 16 16,
+	  pointer;
+  }
 
 .spectrum-line {
 	position: absolute;
@@ -161,3 +179,119 @@ html {
 			0 -15px 40px blue;
 	}
 }
+
+
+.image-scroll {
+	margin-top: 2rem;
+	display: flex;
+	gap: clamp(0.5rem, 3vw, 3rem);
+  }
+  
+  .scroll-column {
+	overflow: hidden;
+	height: 700px; /* Adjust this value based on your needs */
+  }
+  
+  .scroll-content {
+	display: flex;
+	flex-direction: column;
+	animation: scroll linear infinite;
+  }
+  
+  .scroll-image {
+	max-width: 11rem;
+	width: 100%;  /* Changed from auto */
+	height: auto;
+	object-fit: cover;
+	flex-shrink: 0;  /* Prevent image from shrinking */
+	border-radius: 13px;
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+	margin: 1rem 0.15rem;
+  }
+  
+  .scroll-image2 {
+	max-width: 20rem;
+	width: 100%;  /* Changed from auto */
+	height: auto;
+	object-fit: contain;
+	flex-shrink: 0;  /* Prevent image from shrinking */
+	border-radius: 13px;
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+	margin: 1rem 0.25rem;
+  }
+  
+  @keyframes scroll {
+	0% {
+	  transform: translateY(0);
+	}
+	100% {
+	  transform: translateY(-50%);
+	}
+  }
+  
+  /* Optional: Pause animation on hover */
+  .scroll-content:hover {
+	animation-play-state: paused;
+  }
+
+  .name-container {
+
+    z-index: 10;
+}
+
+.video-noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100%-2rem);
+    height: 100%;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" viewBox="0 0 100 100" fill="none" filter="url(%23noise)"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="1" result="turbulence"/%3E%3CfeDisplacementMap in="turbulence" in2="SourceGraphic" scale="5"/%3E%3C/filter%3E%3Crect width="100%" height="100%" fill="white"/%3E%3C/svg%3E');
+    opacity: 0.5;
+}
+
+/* styles/globals.css */
+@media (pointer: fine) {
+	* {
+	  cursor: none;
+	}
+	
+	.cursor-dot {
+	  width: 20px;
+	  height: 20px;
+	  margin-left: 0px;
+	  margin-bottom: 20px;
+	  position: fixed;
+	  border-radius: 50%;
+	  pointer-events: none;
+	  mix-blend-mode: difference;
+	  background-color: white;
+	  z-index: 9999;
+	  transition: transform 0.15s cubic-bezier(.33,.96,1,.67);
+	  transform-origin: center;
+	}
+  
+	.cursor-dot-large {
+	  width: 48px;
+	  height: 48px;
+	  transition: all 0.25s cubic-bezier(.33,.96,1,.67);
+	}
+  }
+
+  .overflow-x-scroll {
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+  }
+  
+  .snap-center {
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
+  }
+
+  :focus,
+.focus-visible:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: 0;
+}
+
